@@ -1,0 +1,42 @@
+
+{
+  "servers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "type": "stdio"
+    },
+    "playwright-test": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "playwright",
+        "run-test-mcp-server"
+      ]
+    },
+       "excel": {
+            "command": "npx",
+            "args": ["--yes", "@negokaz/excel-mcp-server"],
+            "env": {
+                "EXCEL_MCP_PAGING_CELLS_LIMIT": "4000"
+            }
+        },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/abilashchintalacheruvula/Desktop/Repos/AIAgent_MCP_Framework_0106/test-files",
+        "/Users/abilashchintalacheruvula/Desktop/Repos/AIAgent_MCP_Framework_0106"
+      ],
+      "type": "stdio"
+    },
+    "github": {
+			"type": "http",
+			"url": "https://api.githubcopilot.com/mcp/"
+		}
+  },
+  "inputs": []
+}
